@@ -22,8 +22,8 @@ export default function Footer() {
           >
             TikTok
           </Link>
-          <Link href="mailto:contacto@somosunafe.com" className="text-sm hover:text-orange-400 transition-colors">
-            Contacto (ejemplo)
+          <Link href="mailto:unafebanda@gmail.com" className="text-sm hover:text-orange-400 transition-colors">
+            Contacto
           </Link>
         </div>
       </div>
