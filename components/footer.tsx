@@ -10,7 +10,7 @@ export default function Footer() {
           <Image src="/isotype-flame.png" alt="Una Fé Isotype" width={30} height={30} className="mr-2" />
           <p className="text-sm">&copy; {currentYear} Una Fé. Todos los derechos reservados.</p>
         </div>
-        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 text-center">
+        <div className="flex space-x-4">
           <Link href="#music" className="text-sm hover:text-orange-400 transition-colors">
             Música
           </Link>

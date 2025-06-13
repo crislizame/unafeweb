@@ -1,4 +1,4 @@
-"use client" // Necesario para animaciones de entrada y el hook
+"use client"
 
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
@@ -8,13 +8,14 @@ import { useEffect, useState } from "react"
 
 export default function HeroSection() {
   const [isMounted, setIsMounted] = useState(false)
+
   useEffect(() => {
     setIsMounted(true)
   }, [])
 
   const getDelayClass = (index: number) => {
-    if (!isMounted) return "opacity-0" // Oculto antes de montar para evitar flash
-    return `animate-fadeInUp opacity-0` // opacity-0 es el estado inicial antes de la animación
+    if (!isMounted) return "opacity-0"
+    return `animate-fadeInUp opacity-0`
   }
 
   const animationStyle = (delay: number) => ({
@@ -38,7 +39,7 @@ export default function HeroSection() {
                   width={300}
                   height={100}
                   className="mb-4 logo-image-hero"
-                  priority // Importante para LCP
+                  priority
                 />
               </div>
               <h1
@@ -64,7 +65,12 @@ export default function HeroSection() {
                   Escucha Ahora
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="bg-black text-white border-white hover:bg-white hover:text-black transition-colors"
+              >
                 <Link href="#connect">Conéctate</Link>
               </Button>
             </div>
