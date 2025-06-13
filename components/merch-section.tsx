@@ -9,7 +9,7 @@ export default function MerchSection() {
 
   return (
     <section id="merch" className="w-full py-12 md:py-24 lg:py-32 bg-slate-50 dark:bg-slate-900 overflow-hidden">
-      <div ref={sectionRef} className="container px-4 md:px-6">
+      <div ref={sectionRef} className="container px-4 md:px-6 mx-auto">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-3">
             <div className="inline-block rounded-lg bg-slate-100 px-3 py-1 text-sm dark:bg-slate-800 text-orange-600">
@@ -21,15 +21,13 @@ export default function MerchSection() {
               artículos y la tienda disponible!
             </p>
           </div>
-          <div ref={imageRef} className="mt-8 w-full max-w-2xl">
-            {" "}
-            {/* Contenedor para controlar el tamaño y centrado */}
+          <div ref={imageRef} className="mt-8 w-full max-w-2xl mx-auto">
             <Image
               src="/merch-camiseta-doblada-con-amor-eterno.jpg"
               alt="Diseño de camiseta Una Fé - Con Amor Eterno (doblada)"
-              width={1024} // Ancho intrínseco de la imagen o un tamaño base para calidad
-              height={682} // Alto intrínseco de la imagen o un tamaño base para calidad
-              className="rounded-lg shadow-xl w-full h-auto object-contain" // w-full h-auto para responsividad, object-contain para ver toda la imagen
+              width={1024}
+              height={682}
+              className="rounded-lg shadow-xl w-full h-auto object-contain mx-auto"
             />
           </div>
           <div className="mt-6">

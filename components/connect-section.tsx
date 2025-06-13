@@ -39,7 +39,7 @@ export default function ConnectSection() {
 
   return (
     <section id="connect" className="w-full py-12 md:py-24 lg:py-32 overflow-hidden">
-      <div ref={sectionRef} className="container px-4 md:px-6">
+      <div ref={sectionRef} className="container px-4 md:px-6 mx-auto">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-3">
             <div className="inline-block rounded-lg bg-slate-100 px-3 py-1 text-sm dark:bg-slate-800 text-orange-600">
@@ -62,10 +62,6 @@ export default function ConnectSection() {
               >
                 <Link href={social.href} target="_blank" rel="noopener noreferrer" className="group">
                   <div className="w-full aspect-square flex flex-col items-center justify-center p-3 border rounded-lg hover:shadow-lg transition-shadow dark:border-slate-700 hover:border-orange-500 dark:hover:border-orange-500 text-center">
-                    {/* 
-                      La clase h-10 w-10 podría no aplicar como se espera debido a width/height en el SVG.
-                      El color del texto no afectará al stroke del SVG de TikTok.
-                    */}
                     <social.icon className="h-10 w-10 text-muted-foreground group-hover:text-orange-500 transition-colors flex-shrink-0" />
                     <p className="mt-2 text-xs sm:text-sm font-medium text-muted-foreground group-hover:text-orange-500 transition-colors">
                       {social.name}

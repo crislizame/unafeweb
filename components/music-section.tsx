@@ -10,7 +10,7 @@ const songs = [
   {
     title: "Todo para mí",
     artist: "Una Fé",
-    releaseDate: "2 de Junio, 2025", // Año actualizado
+    releaseDate: "2 de Junio, 2025",
     imageUrl: "/todo-para-mi-cover.jpg",
     spotifyUrl: "https://open.spotify.com/track/0LW5U9mNzva6ANB05ZTyiF?si=3d1a6098fdfa4070",
     youtubeUrl: "https://www.youtube.com/watch?v=7q9F6U0g8Wc&t=6s&ab_channel=UnaF%C3%A9",
@@ -21,7 +21,7 @@ const songs = [
   {
     title: "Con amor eterno",
     artist: "Una Fé",
-    releaseDate: "31 de Marzo, 2025", // Año actualizado
+    releaseDate: "31 de Marzo, 2025",
     imageUrl: "/con-amor-eterno-cover.jpg",
     spotifyUrl: "https://open.spotify.com/track/0nzOWpcPm8Ct6ltHLXVReu?si=82d06a35ea4a4779",
     youtubeUrl: "https://www.youtube.com/watch?v=XpGxjfJljKE&ab_channel=UnaF%C3%A9",
@@ -38,37 +38,35 @@ export default function MusicSection() {
 
   return (
     <section id="music" className="w-full py-12 md:py-24 lg:py-32 bg-slate-50 dark:bg-slate-900 overflow-hidden">
-      <div ref={sectionRef} className="container px-4 md:px-6">
+      <div ref={sectionRef} className="container px-4 md:px-6 mx-auto">
         <div ref={titleRef} className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
             <div className="inline-block rounded-lg bg-slate-100 px-3 py-1 text-sm dark:bg-slate-800 text-orange-600">
               Nuestra Música
             </div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Escucha Nuestras Canciones</h2>
-            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <p className="mx-auto max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Adora con nosotros. Encuentra nuestra música en tu plataforma favorita.
             </p>
           </div>
         </div>
-        <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 pt-12">
+        <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 pt-12 max-w-5xl">
           {songs.map((song, index) => (
             <div key={song.title} ref={index === 0 ? card1Ref : card2Ref} style={{ animationDelay: `${index * 0.2}s` }}>
               <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
-              {song.isNew && (
-                    <div className="absolute top-2 right-2 bg-orange-500 text-white text-xs font-semibold px-2 py-1 rounded-full z-10">
-                      ¡NUEVO!
-                    </div>
-                  )}
+                {song.isNew && (
+                  <div className="absolute top-2 right-2 bg-orange-500 text-white text-xs font-semibold px-2 py-1 rounded-full z-10">
+                    ¡NUEVO!
+                  </div>
+                )}
                 <CardHeader className="p-0 relative">
-                  
-                  {/* Contenedor para la imagen para mejor control del aspect ratio y overflow */}
                   <div className="aspect-square w-full overflow-hidden">
                     <Image
                       src={song.imageUrl || "/placeholder.svg"}
                       alt={`Cover de ${song.title}`}
-                      width={600} // Estos son para la resolución de la imagen, no para el layout
+                      width={600}
                       height={600}
-                      className="w-full h-full object-cover" // Asegura que la imagen llene el div contenedor
+                      className="w-full h-full object-cover"
                     />
                   </div>
                 </CardHeader>
