@@ -11,9 +11,6 @@ import { Suspense } from "react"
 
 const inter = Inter({ subsets: ["latin"] })
 
-// Generar un timestamp para forzar la actualización del cache
-const cacheBreaker = Date.now()
-
 export const metadata: Metadata = {
   title: "Una Fé | Banda de Adoración Cristiana",
   description:
@@ -55,13 +52,6 @@ export const metadata: Metadata = {
     siteName: "Una Fé",
     images: [
       {
-        url: `/opengraph-image?v=${cacheBreaker}`,
-        width: 1200,
-        height: 630,
-        alt: "Una Fé - Banda de Adoración Cristiana",
-        type: "image/png",
-      },
-      {
         url: "/una-fe-banda-en-vivo.jpg",
         width: 1280,
         height: 720,
@@ -77,14 +67,7 @@ export const metadata: Metadata = {
     title: "Una Fé | Banda de Adoración Cristiana",
     description:
       "Somos Una Fé, una banda de adoración cristiana que comparte el amor de Dios a través de la música. Escucha nuestras canciones y únete a nuestra comunidad de fe.",
-    images: [
-      {
-        url: `/opengraph-image?v=${cacheBreaker}`,
-        alt: "Una Fé - Banda de Adoración Cristiana",
-        width: 1200,
-        height: 630,
-      },
-    ],
+    images: ["/una-fe-banda-en-vivo.jpg"],
     creator: "@somosunafe",
     site: "@somosunafe",
   },
@@ -130,23 +113,21 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#ea580c" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
 
-        {/* Meta tags específicos para WhatsApp y otras apps con cache busting */}
-        <meta property="og:image" content={`https://www.somosunafe.com/opengraph-image?v=${cacheBreaker}`} />
-        <meta property="og:image:secure_url" content={`https://www.somosunafe.com/opengraph-image?v=${cacheBreaker}`} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:alt" content="Una Fé - Banda de Adoración Cristiana" />
-        <meta property="og:updated_time" content={new Date().toISOString()} />
+        {/* Meta tags específicos para WhatsApp y otras apps */}
+        <meta property="og:image" content="https://www.somosunafe.com/una-fe-banda-en-vivo.jpg" />
+        <meta property="og:image:secure_url" content="https://www.somosunafe.com/una-fe-banda-en-vivo.jpg" />
+        <meta property="og:image:width" content="1280" />
+        <meta property="og:image:height" content="720" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="Una Fé - Banda de Adoración Cristiana en vivo" />
 
         {/* Twitter Card específico */}
-        <meta name="twitter:image" content={`https://www.somosunafe.com/opengraph-image?v=${cacheBreaker}`} />
-        <meta name="twitter:image:alt" content="Una Fé - Banda de Adoración Cristiana" />
+        <meta name="twitter:image" content="https://www.somosunafe.com/una-fe-banda-en-vivo.jpg" />
+        <meta name="twitter:image:alt" content="Una Fé - Banda de Adoración Cristiana en vivo" />
 
         {/* Meta tags adicionales para WhatsApp */}
         <meta property="og:site_name" content="Una Fé" />
         <meta property="og:locale" content="es_ES" />
-        <meta property="article:author" content="Una Fé" />
 
         {/* Verificación de sitios web */}
         {/* <meta name="google-site-verification" content="tu-codigo-de-verificacion-aqui" /> */}
@@ -176,7 +157,7 @@ export default function RootLayout({
               description: "Banda de adoración cristiana que comparte el amor de Dios a través de la música",
               genre: ["Christian Music", "Worship", "Contemporary Christian"],
               url: "https://www.somosunafe.com",
-              image: `https://www.somosunafe.com/opengraph-image?v=${cacheBreaker}`,
+              image: "https://www.somosunafe.com/una-fe-banda-en-vivo.jpg",
               logo: "https://www.somosunafe.com/logo-white.png",
               sameAs: [
                 "https://www.instagram.com/somosunafe",
