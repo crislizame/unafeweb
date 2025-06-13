@@ -1,5 +1,5 @@
 import type React from "react"
-import type { Metadata } from "next.js"
+import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://una-fe-website.vercel.app"), // Cambia por tu dominio real
+  metadataBase: new URL("https://www.somosunafe.com"),
   alternates: {
     canonical: "/",
   },
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     title: "Una Fé | Banda de Adoración Cristiana",
     description:
       "Somos Una Fé, una banda de adoración cristiana que comparte el amor de Dios a través de la música. Escucha nuestras canciones y únete a nuestra comunidad de fe.",
-    url: "https://una-fe-website.vercel.app", // Cambia por tu dominio real
+    url: "https://www.somosunafe.com",
     siteName: "Una Fé",
     images: [
       {
@@ -145,9 +145,9 @@ export default function RootLayout({
               alternateName: "Banda Una Fé",
               description: "Banda de adoración cristiana que comparte el amor de Dios a través de la música",
               genre: ["Christian Music", "Worship", "Contemporary Christian"],
-              url: "https://una-fe-website.vercel.app", // Cambia por tu dominio real
-              image: "https://una-fe-website.vercel.app/una-fe-banda-en-vivo.jpg", // Cambia por tu dominio real
-              logo: "https://una-fe-website.vercel.app/logo-white.png", // Cambia por tu dominio real
+              url: "https://www.somosunafe.com",
+              image: "https://www.somosunafe.com/una-fe-banda-en-vivo.jpg",
+              logo: "https://www.somosunafe.com/logo-white.png",
               sameAs: [
                 "https://www.instagram.com/somosunafe",
                 "https://www.tiktok.com/@somosunafe",
@@ -167,13 +167,13 @@ export default function RootLayout({
                   "@type": "MusicAlbum",
                   name: "Todo para mí",
                   datePublished: "2025-06-02",
-                  image: "https://una-fe-website.vercel.app/todo-para-mi-cover.jpg", // Cambia por tu dominio real
+                  image: "https://www.somosunafe.com/todo-para-mi-cover.jpg",
                 },
                 {
                   "@type": "MusicAlbum",
                   name: "Con amor eterno",
                   datePublished: "2025-03-31",
-                  image: "https://una-fe-website.vercel.app/con-amor-eterno-cover.jpg", // Cambia por tu dominio real
+                  image: "https://www.somosunafe.com/con-amor-eterno-cover.jpg",
                 },
               ],
             }),
