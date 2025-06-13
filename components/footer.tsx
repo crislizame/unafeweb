@@ -5,12 +5,12 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
   return (
     <footer className="bg-slate-900 text-slate-400 py-8">
-      <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center">
-        <div className="flex items-center mb-4 md:mb-0">
+      <div className="container mx-auto px-4 md:px-6 flex flex-col items-center md:flex-row md:justify-between md:items-center">
+        <div className="flex items-center mb-4 md:mb-0 text-center md:text-left">
           <Image src="/isotype-flame.png" alt="Una Fé Isotype" width={30} height={30} className="mr-2" />
           <p className="text-sm">&copy; {currentYear} Una Fé. Todos los derechos reservados.</p>
         </div>
-        <div className="flex space-x-4">
+        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 text-center">
           <Link href="#music" className="text-sm hover:text-orange-400 transition-colors">
             Música
           </Link>
