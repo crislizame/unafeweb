@@ -1,0 +1,27 @@
+{
+  "name": "Una Fé - Banda de Adoración Cristiana",
+  "short_name": "Una Fé",
+  "description": "Banda de adoración cristiana que comparte el amor de Dios a través de la música",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ea580c",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/isotype-flame.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/isotype-flame.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["music", "entertainment", "lifestyle"],
+  "lang": "es",
+  "dir": "ltr"
+}

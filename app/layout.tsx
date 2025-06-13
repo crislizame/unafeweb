@@ -1,5 +1,5 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata } from "next.js"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -13,10 +13,95 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Una Fé | Banda de Adoración Cristiana",
-  description: "Sitio web oficial de Una Fé. Escucha nuestra música, conoce más sobre nosotros y conecta.",
-  icons: {
-    icon: "/isotype-flame.png",
+  description:
+    "Somos Una Fé, una banda de adoración cristiana que comparte el amor de Dios a través de la música. Escucha nuestras canciones, únete a nuestros lives en TikTok y conecta con nuestra comunidad de fe.",
+  keywords: [
+    "Una Fé",
+    "banda cristiana",
+    "adoración cristiana",
+    "música cristiana",
+    "worship",
+    "alabanza",
+    "TikTok live",
+    "Todo para mí",
+    "Con amor eterno",
+    "banda de adoración",
+    "música de adoración",
+    "cristianos",
+    "fe",
+    "Dios",
+    "Jesús",
+  ],
+  authors: [{ name: "Una Fé" }],
+  creator: "Una Fé",
+  publisher: "Una Fé",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
   },
+  metadataBase: new URL("https://una-fe-website.vercel.app"), // Cambia por tu dominio real
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Una Fé | Banda de Adoración Cristiana",
+    description:
+      "Somos Una Fé, una banda de adoración cristiana que comparte el amor de Dios a través de la música. Escucha nuestras canciones y únete a nuestra comunidad de fe.",
+    url: "https://una-fe-website.vercel.app", // Cambia por tu dominio real
+    siteName: "Una Fé",
+    images: [
+      {
+        url: "/una-fe-banda-en-vivo.jpg",
+        width: 1280,
+        height: 720,
+        alt: "Una Fé - Banda de Adoración Cristiana en vivo",
+      },
+      {
+        url: "/logo-white.png",
+        width: 300,
+        height: 100,
+        alt: "Una Fé Logo",
+      },
+    ],
+    locale: "es_ES",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Una Fé | Banda de Adoración Cristiana",
+    description:
+      "Somos Una Fé, una banda de adoración cristiana que comparte el amor de Dios a través de la música. Escucha nuestras canciones y únete a nuestra comunidad de fe.",
+    images: ["/una-fe-banda-en-vivo.jpg"],
+    creator: "@somosunafe",
+    site: "@somosunafe",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: [
+      { url: "/isotype-flame.png", sizes: "32x32", type: "image/png" },
+      { url: "/isotype-flame.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: [{ url: "/isotype-flame.png", sizes: "180x180", type: "image/png" }],
+    other: [
+      {
+        rel: "apple-touch-icon-precomposed",
+        url: "/isotype-flame.png",
+      },
+    ],
+  },
+  manifest: "/manifest.json",
+  category: "music",
     generator: 'v0.dev'
 }
 
@@ -27,6 +112,74 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" suppressHydrationWarning>
+      <head>
+        {/* Etiquetas meta adicionales para SEO */}
+        <meta name="theme-color" content="#ea580c" />
+        <meta name="msapplication-TileColor" content="#ea580c" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
+
+        {/* Verificación de sitios web */}
+        {/* <meta name="google-site-verification" content="tu-codigo-de-verificacion-aqui" /> */}
+        {/* <meta name="msvalidate.01" content="tu-codigo-de-bing-aqui" /> */}
+
+        {/* Preconnect para mejorar rendimiento */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+        {/* DNS Prefetch para recursos externos */}
+        <link rel="dns-prefetch" href="https://open.spotify.com" />
+        <link rel="dns-prefetch" href="https://music.apple.com" />
+        <link rel="dns-prefetch" href="https://www.youtube.com" />
+        <link rel="dns-prefetch" href="https://www.tiktok.com" />
+        <link rel="dns-prefetch" href="https://www.instagram.com" />
+        <link rel="dns-prefetch" href="https://www.facebook.com" />
+
+        {/* Structured Data - JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "MusicGroup",
+              name: "Una Fé",
+              alternateName: "Banda Una Fé",
+              description: "Banda de adoración cristiana que comparte el amor de Dios a través de la música",
+              genre: ["Christian Music", "Worship", "Contemporary Christian"],
+              url: "https://una-fe-website.vercel.app", // Cambia por tu dominio real
+              image: "https://una-fe-website.vercel.app/una-fe-banda-en-vivo.jpg", // Cambia por tu dominio real
+              logo: "https://una-fe-website.vercel.app/logo-white.png", // Cambia por tu dominio real
+              sameAs: [
+                "https://www.instagram.com/somosunafe",
+                "https://www.tiktok.com/@somosunafe",
+                "https://www.youtube.com/@somosbandaunafe",
+                "https://www.facebook.com/somosunafe",
+                "https://open.spotify.com/intl-es/artist/5bXjoH4bmOUmrTutag8vhE",
+                "https://music.apple.com/co/artist/una-f%C3%A9/1801342062",
+                "https://linktr.ee/Somosunafe",
+              ],
+              contactPoint: {
+                "@type": "ContactPoint",
+                email: "unafebanda@gmail.com",
+                contactType: "customer service",
+              },
+              album: [
+                {
+                  "@type": "MusicAlbum",
+                  name: "Todo para mí",
+                  datePublished: "2025-06-02",
+                  image: "https://una-fe-website.vercel.app/todo-para-mi-cover.jpg", // Cambia por tu dominio real
+                },
+                {
+                  "@type": "MusicAlbum",
+                  name: "Con amor eterno",
+                  datePublished: "2025-03-31",
+                  image: "https://una-fe-website.vercel.app/con-amor-eterno-cover.jpg", // Cambia por tu dominio real
+                },
+              ],
+            }),
+          }}
+        />
+      </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <AnimationFix />
