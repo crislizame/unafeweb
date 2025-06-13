@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 210 40% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideBehind {
+  0% {
+    transform: translateX(-100%); /* Barra completamente a la izquierda, fuera de vista */
+    opacity: 0; /* Comienza invisible */
+  }
+  20% {
+    /* La barra entra y se vuelve visible */
+    opacity: 0.5; /* Ajusta la opacidad del brillo como desees */
+  }
+  80% {
+    /* La barra está a punto de salir por la derecha, aún visible */
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(100%); /* Barra completamente a la derecha, fuera de vista */
+    opacity: 0; /* Termina invisible */
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* Clases para Intersection Observer */
+.scroll-animate,
+.scroll-animate-child {
+  /* Estado base para elementos animados por scroll (directos o hijos) */
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Para elementos que tienen el hook directamente Y para hijos de un contenedor visible */
+.is-visible .scroll-animate-child,
+.scroll-animate.is-visible {
+  opacity: 1;
+}
+
+/* --- Animación fadeInUp --- */
+.scroll-animate-fadeInUp,
+.scroll-animate-fadeInUp-child {
+  /* Estado inicial de transformación */
+  transform: translateY(30px);
+}
+
+.is-visible .scroll-animate-fadeInUp-child /* Hijo de un contenedor visible */,
+.scroll-animate-fadeInUp.is-visible {
+  /* Elemento con hook directo */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Animación fadeIn (simple) --- */
+/* (No se necesita transformación inicial para fadeIn, solo opacidad) */
+.is-visible .scroll-animate-fadeIn-child,
+.scroll-animate-fadeIn.is-visible {
+  opacity: 1;
+}
+
+/* Estilos para la barra detrás del logo */
+.logo-shine-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.logo-shine-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* La barra es tan ancha como el contenedor del logo */
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 20%,
+    rgba(255, 255, 255, 0.3) 40% /* Ajusta estos porcentajes para el ancho y posición del brillo */,
+    rgba(255, 255, 255, 0.3) 60%,
+    transparent 80%
+  );
+  opacity: 0; /* Asegura que la barra sea invisible por defecto */
+  animation: slideBehind 5s ease-in-out infinite; /* La animación dura 5s y se repite */
+  animation-delay: 2s;
+  z-index: 0;
+}
+
+.logo-image-hero {
+  position: relative;
+  z-index: 1;
+}
