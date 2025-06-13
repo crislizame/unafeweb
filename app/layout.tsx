@@ -113,6 +113,9 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#ea580c" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
 
+        {/* Facebook App ID - OBLIGATORIO */}
+        <meta property="fb:app_id" content="655686977515252" />
+
         {/* Meta tags específicos para WhatsApp y otras apps */}
         <meta property="og:image" content="https://www.somosunafe.com/una-fe-banda-en-vivo.jpg" />
         <meta property="og:image:secure_url" content="https://www.somosunafe.com/una-fe-banda-en-vivo.jpg" />
@@ -121,13 +124,28 @@ export default function RootLayout({
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:alt" content="Una Fé - Banda de Adoración Cristiana en vivo" />
 
-        {/* Twitter Card específico */}
-        <meta name="twitter:image" content="https://www.somosunafe.com/una-fe-banda-en-vivo.jpg" />
-        <meta name="twitter:image:alt" content="Una Fé - Banda de Adoración Cristiana en vivo" />
-
-        {/* Meta tags adicionales para WhatsApp */}
+        {/* Open Graph adicionales */}
+        <meta property="og:title" content="Una Fé | Banda de Adoración Cristiana" />
+        <meta
+          property="og:description"
+          content="Somos Una Fé, una banda de adoración cristiana que comparte el amor de Dios a través de la música. Escucha nuestras canciones y únete a nuestra comunidad de fe."
+        />
+        <meta property="og:url" content="https://www.somosunafe.com" />
+        <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Una Fé" />
         <meta property="og:locale" content="es_ES" />
+
+        {/* Twitter Card específico */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Una Fé | Banda de Adoración Cristiana" />
+        <meta
+          name="twitter:description"
+          content="Somos Una Fé, una banda de adoración cristiana que comparte el amor de Dios a través de la música. Escucha nuestras canciones y únete a nuestra comunidad de fe."
+        />
+        <meta name="twitter:image" content="https://www.somosunafe.com/una-fe-banda-en-vivo.jpg" />
+        <meta name="twitter:image:alt" content="Una Fé - Banda de Adoración Cristiana en vivo" />
+        <meta name="twitter:creator" content="@somosunafe" />
+        <meta name="twitter:site" content="@somosunafe" />
 
         {/* Verificación de sitios web */}
         {/* <meta name="google-site-verification" content="tu-codigo-de-verificacion-aqui" /> */}
