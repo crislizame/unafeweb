@@ -64,8 +64,8 @@ export default async function Image() {
       },
     )
   } catch (e) {
-    console.log(`Error generating OpenGraph image: ${e.message}`)
-    return new Response(`Error generating OpenGraph image`, {
+    console.log(`Error generating Twitter image: ${e.message}`)
+    return new Response(`Error generating Twitter image`, {
       status: 500,
     })
   }

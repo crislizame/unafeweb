@@ -52,14 +52,7 @@ export const metadata: Metadata = {
     siteName: "Una Fé",
     images: [
       {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Una Fé - Banda de Adoración Cristiana",
-        type: "image/png",
-      },
-      {
-        url: "/una-fe-banda-en-vivo.jpg",
+        url: "/una-fe-banda-en-vivo.jpg", // Usamos una imagen que ya existe
         width: 1280,
         height: 720,
         alt: "Una Fé - Banda de Adoración Cristiana en vivo",
@@ -74,14 +67,7 @@ export const metadata: Metadata = {
     title: "Una Fé | Banda de Adoración Cristiana",
     description:
       "Somos Una Fé, una banda de adoración cristiana que comparte el amor de Dios a través de la música. Escucha nuestras canciones y únete a nuestra comunidad de fe.",
-    images: [
-      {
-        url: "/og-image.png",
-        alt: "Una Fé - Banda de Adoración Cristiana",
-        width: 1200,
-        height: 630,
-      },
-    ],
+    images: ["/una-fe-banda-en-vivo.jpg"], // Usamos una imagen que ya existe
     creator: "@somosunafe",
     site: "@somosunafe",
   },
@@ -128,14 +114,14 @@ export default function RootLayout({
         <meta name="msapplication-config" content="/browserconfig.xml" />
 
         {/* Meta tags específicos para WhatsApp y otras apps */}
-        <meta property="og:image" content="https://www.somosunafe.com/og-image.png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image" content="https://www.somosunafe.com/una-fe-banda-en-vivo.jpg" />
+        <meta property="og:image:width" content="1280" />
+        <meta property="og:image:height" content="720" />
+        <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:alt" content="Una Fé - Banda de Adoración Cristiana" />
 
         {/* Twitter Card específico */}
-        <meta name="twitter:image" content="https://www.somosunafe.com/og-image.png" />
+        <meta name="twitter:image" content="https://www.somosunafe.com/una-fe-banda-en-vivo.jpg" />
         <meta name="twitter:image:alt" content="Una Fé - Banda de Adoración Cristiana" />
 
         {/* Verificación de sitios web */}
@@ -166,7 +152,7 @@ export default function RootLayout({
               description: "Banda de adoración cristiana que comparte el amor de Dios a través de la música",
               genre: ["Christian Music", "Worship", "Contemporary Christian"],
               url: "https://www.somosunafe.com",
-              image: "https://www.somosunafe.com/og-image.png",
+              image: "https://www.somosunafe.com/una-fe-banda-en-vivo.jpg",
               logo: "https://www.somosunafe.com/logo-white.png",
               sameAs: [
                 "https://www.instagram.com/somosunafe",
