@@ -9,6 +9,9 @@ export const size = {
 }
 export const contentType = "image/png"
 
+// Añadir headers para evitar cache
+export const revalidate = 0
+
 export default async function Image() {
   try {
     return new ImageResponse(
@@ -23,8 +26,22 @@ export default async function Image() {
           justifyContent: "center",
           fontFamily: "system-ui",
           color: "white",
+          position: "relative",
         }}
       >
+        {/* Añadir un elemento único para forzar regeneración */}
+        <div
+          style={{
+            position: "absolute",
+            top: 10,
+            right: 10,
+            fontSize: 12,
+            opacity: 0.1,
+          }}
+        >
+          {Date.now()}
+        </div>
+
         <div
           style={{
             fontSize: 72,
@@ -61,6 +78,11 @@ export default async function Image() {
       </div>,
       {
         ...size,
+        headers: {
+          "Cache-Control": "no-cache, no-store, must-revalidate",
+          Pragma: "no-cache",
+          Expires: "0",
+        },
       },
     )
   } catch (e) {
